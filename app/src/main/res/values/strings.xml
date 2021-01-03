@@ -3,5 +3,5 @@
     <string name="button_start">Start</string>
     <string name="button_stop">Stop</string>
     <string name="button_restart">Restart</string>
-    <string name="text_view">00:00:00</string>
+    <string name="text_view">blablabla</string>
 </resources>
