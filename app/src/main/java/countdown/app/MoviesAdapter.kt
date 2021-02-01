@@ -1,5 +1,6 @@
 package countdown.app
 
+import android.view.LayoutInflater
 import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
@@ -12,18 +13,23 @@ RecyclerView.Adapter<MoviesAdapter.MyViewHolder>(){
     internal inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view){
         var title: TextView = view.findViewById(R.id.title)
         var year: TextView = view.findViewById(R.id.year)
+        var genre: TextView = view.findViewById(R.id.genre)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoviesAdapter.MyViewHolder {
-        TODO("Not yet implemented")
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_row,parent,false)
+        return MyViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: MoviesAdapter.MyViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val movie = moviesList[position]
+        holder.title.text = movie.getTitle()
+        holder.genre.text = movie.getGenre()
+        holder.year.text = movie.getYear()
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return moviesList.size
     }
 
 }
