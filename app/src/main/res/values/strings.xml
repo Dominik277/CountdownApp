@@ -1,7 +1,6 @@
 <resources>
-    <string name="app_name">Countdown app</string>
-    <string name="button_start">Start</string>
-    <string name="button_stop">Stop</string>
-    <string name="button_restart">Restart</string>
-    <string name="text_view">blablabla</string>
+    <string name="app_name">Learning Kotlin</string>
+    <string name="api_key">INSERT API KEY HERE</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="change_layout_manager">Change Layout</string>
 </resources>
