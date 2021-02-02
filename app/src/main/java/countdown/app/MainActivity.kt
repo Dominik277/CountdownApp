@@ -8,6 +8,9 @@ import android.os.Bundle
 import android.provider.ContactsContract
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
+import android.widget.BaseAdapter
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.DefaultItemAnimator
@@ -83,6 +86,42 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    inner class MyNotesAdpater: BaseAdapter() {
 
+        var listNotesAdapter = ArrayList<Notes>()
+        var context:Context?=null
+        constructor(context: Context, listNotesAdapter:ArrayList<Notes>):super(){
+            this.listNotesAdapter=listNotesAdapter
+            this.context=context
+        }
+
+        override fun getCount(): Int {
+
+        }
+
+        override fun getItem(position: Int): Any {
+
+        }
+
+        override fun getItemId(position: Int): Long {
+
+        }
+
+        override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
+            var myView=layoutInflater.inflate(R.layout.ticcket,null)
+            var myNote = listNotesAdapter[p0]
+            myView.tvTitle.text=myNote.Title
+            myView.tvDes.text=myNote.Description
+            myView.ivDelete.setOnClickListener{
+                dbManager!!.NotesDao().delete(myNote)
+                LoadQuery("%")
+            }
+            myView.ivEdit.setOnClickListener{
+                GoToUpdate(myNote)
+            }
+            return myView
+        }
+
+    }
 
 }
