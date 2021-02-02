@@ -28,9 +28,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         dbManager = DBManager().getDatabase(applicationContext)
 
-        listNotes.add(ContactsContract.CommonDataKinds.Note(1, " meet professor", "Create any pattern of your own - tiles, texture, skin, wallpaper, comic effect, website background and more.  Change any artwork of pattern you found into different flavors and call them your own."))
-        listNotes.add(ContactsContract.CommonDataKinds.Note(2, " meet doctor", "Create any pattern of your own - tiles, texture, skin, wallpaper, comic effect, website background and more.  Change any artwork of pattern you found into different flavors and call them your own."))
-        listNotes.add(ContactsContract.CommonDataKinds.Note(3, " meet friend", "Create any pattern of your own - tiles, texture, skin, wallpaper, comic effect, website background and more.  Change any artwork of pattern you found into different flavors and call them your own."))
+        //listNotes.add(ContactsContract.CommonDataKinds.Note(1, " meet professor", "Create any pattern of your own - tiles, texture, skin, wallpaper, comic effect, website background and more.  Change any artwork of pattern you found into different flavors and call them your own."))
+        //listNotes.add(ContactsContract.CommonDataKinds.Note(2, " meet doctor", "Create any pattern of your own - tiles, texture, skin, wallpaper, comic effect, website background and more.  Change any artwork of pattern you found into different flavors and call them your own."))
+        //listNotes.add(ContactsContract.CommonDataKinds.Note(3, " meet friend", "Create any pattern of your own - tiles, texture, skin, wallpaper, comic effect, website background and more.  Change any artwork of pattern you found into different flavors and call them your own."))
 
         Toast.makeText(this,"onCreate",Toast.LENGTH_LONG).show()
         LoadQuery("%")
@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         if (item != null) {
             when(item.itemId){
@@ -96,15 +96,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun getCount(): Int {
-
+            return listNotesAdapter.size
         }
 
-        override fun getItem(position: Int): Any {
-
+        override fun getItem(p0: Int): Any {
+            return listNotesAdapter[p0]
         }
 
-        override fun getItemId(position: Int): Long {
-
+        override fun getItemId(p0: Int): Long {
+            return p0.toLong()
         }
 
         override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
@@ -122,6 +122,14 @@ class MainActivity : AppCompatActivity() {
             return myView
         }
 
+    }
+
+    fun GoToUpdate(note:Notes){
+        var intent = Intent(this,AddNotes::class.java)
+        intent.putExtra("ID",note.ID)
+        intent.putExtra("name",note.Title)
+        intent.putExtra("des",note.Description)
+        startActivity(intent)
     }
 
 }
