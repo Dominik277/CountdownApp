@@ -2,6 +2,8 @@ package countdown.app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract
+import android.widget.Toast
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -9,45 +11,48 @@ import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
-    private val movieList = ArrayList<MovieModel>()
-    private lateinit var moviesAdapter: MoviesAdapter
+    var listNotes = ArrayList<Notes>()
+    var dbManager:NotesDatabase?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        dbManager = DBManager().getDatabase(applicationContext)
 
-        val recyclerView: RecyclerView = findViewById(R.id.recyclerView);
-        moviesAdapter = MoviesAdapter(movieList)
-        val layoutManager = LinearLayoutManager(applicationContext)
-        recyclerView.layoutManager = layoutManager
-        recyclerView.itemAnimator = DefaultItemAnimator()
-        recyclerView.adapter = moviesAdapter
-        prepareMovieData()
+        listNotes.add(ContactsContract.CommonDataKinds.Note(1, " meet professor", "Create any pattern of your own - tiles, texture, skin, wallpaper, comic effect, website background and more.  Change any artwork of pattern you found into different flavors and call them your own."))
+        listNotes.add(ContactsContract.CommonDataKinds.Note(2, " meet doctor", "Create any pattern of your own - tiles, texture, skin, wallpaper, comic effect, website background and more.  Change any artwork of pattern you found into different flavors and call them your own."))
+        listNotes.add(ContactsContract.CommonDataKinds.Note(3, " meet friend", "Create any pattern of your own - tiles, texture, skin, wallpaper, comic effect, website background and more.  Change any artwork of pattern you found into different flavors and call them your own."))
+
+        Toast.makeText(this,"onCreate",Toast.LENGTH_LONG).show()
+
+        //Load from DB
+
+
+        LoadQuery("%")
 
     }
 
-    private fun prepareMovieData(){
-        var movie = MovieModel("Mad Max: Fury Road","Action & Adventure","2015")
-        movieList.add(movie)
-        movie = MovieModel("Inside Out","Animation, Kids & Family","2015")
-        movieList.add(movie)
-        movie = MovieModel("Star Wars","Action","2015")
-        movieList.add(movie)
-        movie = MovieModel("Shaun The Sheep","Animation","2017")
-        movieList.add(movie)
-        movie = MovieModel("The Martian","Science Fiction and Fantasy","2015")
-        movieList.add(movie)
-        movie = MovieModel("Up","Animation","2019")
-        movieList.add(movie)
-        movie = MovieModel("Star Trek","Science and Fiction","2012")
-        movieList.add(movie)
-        movie = MovieModel("Back to the Future","Science Fiction","2012")
-        movieList.add(movie)
-        movie = MovieModel("Goldfinger","Action & Adventure","2015")
-        movieList.add(movie)
-        movie = MovieModel("Iron Man","Action & Adventure","2011")
-        movieList.add(movie)
-        movie = MovieModel("Chicken Run","Animation","2020")
+    override  fun onResume() {
+        super.onResume()
+        LoadQuery("%")
+        Toast.makeText(this,"onResume",Toast.LENGTH_LONG).show()
+    }
+
+
+
+
+    fun LoadQuery(title:String){
+
+
+
+
+        listNotes = dbManager!!.NotesDao().loadByTitle(title) as ArrayList<Notes>
+
+
+        var myNotesAdapter= MyNotesAdpater(this, listNotes)
+        lvNotes.adapter=myNotesAdapter
+
+
     }
 
 }
