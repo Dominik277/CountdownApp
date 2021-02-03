@@ -9,12 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CountdownApp">
-        <activity android:name=".Pozicija9Activity"></activity>
-        <activity android:name=".Pozicija8Activity" />
-        <activity android:name=".Pozicija5Activity" />
-        <activity android:name=".Pozicija3Activity" />
-        <activity android:name=".FoodDetails" />
-        <activity android:name=".AddNotes" />
+        <activity android:name=".Pozicije.Pozicija9Activity"/>
+        <activity android:name=".Pozicije.Pozicija8Activity" />
+        <activity android:name=".Pozicije.Pozicija5Activity" />
+        <activity android:name=".Pozicije.Pozicija3Activity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

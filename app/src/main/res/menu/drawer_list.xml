@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="single">
     <item
         android:id="@+id/pozicija3"
         android:icon="@drawable/ic_baseline_add_circle_24"
@@ -17,5 +20,5 @@
         android:id="@+id/pozicija9"
         android:icon="@drawable/ic_baseline_add_circle_24"
         android:title="Pozcija 9"/>
-
+    </group>
 </menu>

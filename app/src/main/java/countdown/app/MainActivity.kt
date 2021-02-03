@@ -1,17 +1,19 @@
 package countdown.app
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import countdown.app.Pozicije.Pozicija3Activity
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var drawer: DrawerLayout
     private lateinit var actionBarToggle: ActionBarDrawerToggle
     private lateinit var navView: NavigationView
 
@@ -19,19 +21,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        drawerLayout = findViewById(R.id.drawerLayout)
+        drawer = findViewById(R.id.drawer)
 
-        actionBarToggle = ActionBarDrawerToggle(this,drawerLayout,0,0)
-        drawerLayout.addDrawerListener(actionBarToggle)
+        actionBarToggle = ActionBarDrawerToggle(this,drawer,0,0)
+        drawer.addDrawerListener(actionBarToggle)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         actionBarToggle.syncState()
 
-        navView = findViewById(R.id.navView)
+        navView = findViewById(R.id.navigation_view)
 
         navView.setNavigationItemSelectedListener { menuItem ->
             when(menuItem.itemId){
                 R.id.pozicija3 -> {
+                    val intent = Intent(this,Pozicija3Activity::class.java)
+                    startActivity(intent)
                     Toast.makeText(this,"Pozicija 3",Toast.LENGTH_LONG).show()
                     true
                 }
@@ -52,19 +56,19 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
-        fun onSupportNavigateUp(): Boolean {
-            drawerLayout.openDrawer(navView)
-            return true
-        }
-
-        fun onBackPressed(){
-            if (this.drawerLayout.isDrawerOpen(GravityCompat.START)){
-                this.drawerLayout.closeDrawer(GravityCompat.START)
-            }else{
-                super.onBackPressed()
-            }
-        }
-
     }
+
+    override fun onBackPressed(){
+        if (this.drawer.isDrawerOpen(GravityCompat.START)){
+            this.drawer.closeDrawer(GravityCompat.START)
+        }else{
+            super.onBackPressed()
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        drawer.openDrawer(navView)
+        return true
+    }
+
 }
