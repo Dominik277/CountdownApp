@@ -2,6 +2,8 @@ package countdown.app.Pozicije
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
 import countdown.app.R
 
 class Pozicija8Activity : AppCompatActivity() {
@@ -11,4 +13,11 @@ class Pozicija8Activity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setTitle("Pozicija 8")
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu_pozicija8,menu)
+        return true
+    }
+
 }
