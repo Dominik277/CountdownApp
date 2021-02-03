@@ -9,52 +9,45 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.GridView
+import android.widget.ImageView
+import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.food_ticket.view.*
 import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
-    var adapter:FoodAdapter?=null
-    var listOfFoods=ArrayList<Food>()
+    var adapter: FoodAdapter? = null
+    var listOfFoods = ArrayList<Food>()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        listOfFoods.add(Food("","",))
-        listOfFoods.add(Food("","",))
-        listOfFoods.add(Food("","",))
-        listOfFoods.add(Food("","",))
-        listOfFoods.add(Food("","",))
-        listOfFoods.add(Food("","",))
-        listOfFoods.add(Food("","",))
-        listOfFoods.add(Food("","",))
+
+
+        listOfFoods.add(Food("", "", 2))
+        listOfFoods.add(Food("", "", 3))
+        listOfFoods.add(Food("", "", 4))
+        listOfFoods.add(Food("", "", 3))
+        listOfFoods.add(Food("", "", 2))
+        listOfFoods.add(Food("", "", 1))
+        listOfFoods.add(Food("", "", 3))
+        listOfFoods.add(Food("", "", 1))
 
         gvListFood.adapter = adapter
 
     }
 
-    class FoodAdapter: BaseAdapter() {
-
-        var listOfFood=ArrayList<Food>()
+    class  FoodAdapter:BaseAdapter {
+        var listOfFood= ArrayList<Food>()
         var context:Context?=null
-        constructor(context: Context, listOfFood:ArrayList<Food>):super(){
+        constructor(context:Context,listOfFood:ArrayList<Food>):super(){
             this.context=context
             this.listOfFood=listOfFood
         }
-
-        override fun getCount(): Int {
-            return listOfFood.size
-        }
-
-        override fun getItem(p0: Int): Any {
-            return listOfFood[p0]
-        }
-
-        override fun getItemId(p0: Int): Long {
-            return p0.toLong()
-        }
-
-        @SuppressLint("ServiceCast")
         override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
             val food = this.listOfFood[p0]
             var inflator = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -67,9 +60,25 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("des",food.des!!)
                 intent.putExtra("image",food.image!!)
                 context!!.startActivity(intent)
-        }
+            }
             foodView.tvName.text =  food.name!!
             return  foodView
+
+        }
+
+        override fun getItem(p0: Int): Any {
+            return listOfFood[p0]
+        }
+
+        override fun getItemId(p0: Int): Long {
+            return p0.toLong()
+        }
+
+        override fun getCount(): Int {
+
+            return listOfFood.size
+        }
+
     }
 
 }
