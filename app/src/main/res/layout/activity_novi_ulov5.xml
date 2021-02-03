@@ -19,36 +19,43 @@
         android:textSize="24dp"
         android:textColor="#000"/>
     <EditText
+        android:id="@+id/vrsta_ulov5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Vrsta ribe?"/>
     <EditText
+        android:id="@+id/kilaza_ulov5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Kilaža ribe?" />
     <EditText
+        android:id="@+id/vrijeme_ulov5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Vrijeme ulova?"/>
     <EditText
+        android:id="@+id/datum_ulov5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Datum ulova?"/>
     <EditText
+        android:id="@+id/mamac_ulov5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Mamac?"/>
     <EditText
+        android:id="@+id/mjesto_ulov5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Okvirno mjesto ulova?"/>
     <Button
+        android:id="@+id/unesi_ulov5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
