@@ -9,10 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CountdownApp">
-        <activity android:name=".NoviUlov.NoviUlov9Activity"></activity>
-        <activity android:name=".NoviUlov.NoviUlov8Activity" />
-        <activity android:name=".NoviUlov.NoviUlov5Activity" />
-        <activity android:name=".NoviUlov.NoviUlov3Activity" />
+        <activity
+            android:name=".NoviUlov.NoviUlov9Activity"
+            android:parentActivityName=".Pozicije.Pozicija9Activity"/>
+        <activity
+            android:name=".NoviUlov.NoviUlov8Activity"
+            android:parentActivityName=".Pozicije.Pozicija8Activity"/>
+        <activity
+            android:name=".NoviUlov.NoviUlov5Activity"
+            android:parentActivityName=".Pozicije.Pozicija5Activity"/>
+        <activity
+            android:name=".NoviUlov.NoviUlov3Activity"
+            android:parentActivityName=".Pozicije.Pozicija3Activity"/>
         <activity
             android:name=".Pozicije.Pozicija9Activity"
             android:parentActivityName=".MainActivity" />

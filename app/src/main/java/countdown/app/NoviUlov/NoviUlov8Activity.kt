@@ -8,5 +8,7 @@ class NoviUlov8Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_novi_ulov8)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        setTitle("Dodaj novi ulov")
     }
 }
