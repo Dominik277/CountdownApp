@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import countdown.app.NoviUlov.NoviUlov5Activity
 import countdown.app.R
 
 class Pozicija5Activity : AppCompatActivity() {
@@ -25,7 +26,7 @@ class Pozicija5Activity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId){
             R.id.menu_pozicija5 -> {
-                val intent = Intent(this,Pozicija3Activity::class.java)
+                val intent = Intent(this,NoviUlov5Activity::class.java)
                 startActivity(intent)
                 return true
             }
