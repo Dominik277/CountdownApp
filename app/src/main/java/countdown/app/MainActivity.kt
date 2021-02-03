@@ -9,6 +9,9 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import countdown.app.Pozicije.Pozicija3Activity
+import countdown.app.Pozicije.Pozicija5Activity
+import countdown.app.Pozicije.Pozicija8Activity
+import countdown.app.Pozicije.Pozicija9Activity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -40,14 +43,20 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.pozicija5 -> {
+                    val intent = Intent(this,Pozicija5Activity::class.java)
+                    startActivity(intent)
                     Toast.makeText(this,"Pozicija 5",Toast.LENGTH_LONG).show()
                     true
                 }
                 R.id.pozicija8 -> {
+                    val intent = Intent(this,Pozicija8Activity::class.java)
+                    startActivity(intent)
                     Toast.makeText(this,"Pozicija 8",Toast.LENGTH_LONG).show()
                     true
                 }
                 R.id.pozicija9 -> {
+                    val intent = Intent(this,Pozicija9Activity::class.java)
+                    startActivity(intent)
                     Toast.makeText(this,"Pozicija 9",Toast.LENGTH_LONG).show()
                     true
                 }

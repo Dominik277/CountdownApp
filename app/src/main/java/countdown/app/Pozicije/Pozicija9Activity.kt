@@ -8,5 +8,7 @@ class Pozicija9Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pozicija9)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        setTitle("Pozicija 9")
     }
 }
