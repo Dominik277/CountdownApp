@@ -2,8 +2,10 @@ package countdown.app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 
@@ -29,32 +31,12 @@ class MainActivity : AppCompatActivity() {
 
         navView.setNavigationItemSelectedListener { menuItem ->
             when(menuItem.itemId){
-                R.id.pozicija1 -> {
-                    Toast.makeText(this,"Pozicija 1",Toast.LENGTH_LONG).show()
-                    true
-                }
-                R.id.pozicija2 -> {
-                    Toast.makeText(this,"Pozicija 2",Toast.LENGTH_LONG).show()
-                    true
-                }
                 R.id.pozicija3 -> {
                     Toast.makeText(this,"Pozicija 3",Toast.LENGTH_LONG).show()
                     true
                 }
-                R.id.pozicija4 -> {
-                    Toast.makeText(this,"Pozicija 4",Toast.LENGTH_LONG).show()
-                    true
-                }
                 R.id.pozicija5 -> {
                     Toast.makeText(this,"Pozicija 5",Toast.LENGTH_LONG).show()
-                    true
-                }
-                R.id.pozicija6 -> {
-                    Toast.makeText(this,"Pozicija 6",Toast.LENGTH_LONG).show()
-                    true
-                }
-                R.id.pozicija7 -> {
-                    Toast.makeText(this,"Pozicija 7",Toast.LENGTH_LONG).show()
                     true
                 }
                 R.id.pozicija8 -> {
@@ -65,14 +47,22 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this,"Pozicija 9",Toast.LENGTH_LONG).show()
                     true
                 }
-                R.id.pozicija10 -> {
-                    Toast.makeText(this,"Pozicija 10",Toast.LENGTH_LONG).show()
-                    true
-                }
-
                 else -> {
                     false
                 }
+            }
+        }
+
+        fun onSupportNavigateUp(): Boolean {
+            drawerLayout.openDrawer(navView)
+            return true
+        }
+
+        fun onBackPressed(){
+            if (this.drawerLayout.isDrawerOpen(GravityCompat.START)){
+                this.drawerLayout.closeDrawer(GravityCompat.START)
+            }else{
+                super.onBackPressed()
             }
         }
 

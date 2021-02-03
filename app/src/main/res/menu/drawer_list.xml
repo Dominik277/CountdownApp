@@ -2,33 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/pozicija1"
-        android:icon="@mipmap/ic_launcher"
-        android:title="Pozcija 1"/>
-    <item
-        android:id="@+id/pozicija2"
-        android:icon="@mipmap/ic_launcher"
-        android:title="Pozcija 2"/>
-    <item
         android:id="@+id/pozicija3"
         android:icon="@mipmap/ic_launcher"
         android:title="Pozcija 3"/>
     <item
-        android:id="@+id/pozicija4"
-        android:icon="@mipmap/ic_launcher"
-        android:title="Pozcija 4"/>
-    <item
         android:id="@+id/pozicija5"
         android:icon="@mipmap/ic_launcher"
         android:title="Pozcija 5"/>
-    <item
-        android:id="@+id/pozicija6"
-        android:icon="@mipmap/ic_launcher"
-        android:title="Pozcija 6"/>
-    <item
-        android:id="@+id/pozicija7"
-        android:icon="@mipmap/ic_launcher"
-        android:title="Pozcija 7"/>
     <item
         android:id="@+id/pozicija8"
         android:icon="@mipmap/ic_launcher"
@@ -37,10 +17,5 @@
         android:id="@+id/pozicija9"
         android:icon="@mipmap/ic_launcher"
         android:title="Pozcija 9"/>
-    <item
-        android:id="@+id/pozicija10"
-        android:icon="@mipmap/ic_launcher"
-        android:title="Pozcija 10"/>
-
 
 </menu>
