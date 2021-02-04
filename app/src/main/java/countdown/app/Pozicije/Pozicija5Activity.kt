@@ -16,6 +16,7 @@ import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_pozicija3.*
+import kotlinx.android.synthetic.main.activity_pozicija5.*
 
 class Pozicija5Activity : AppCompatActivity() {
 
@@ -39,24 +40,24 @@ class Pozicija5Activity : AppCompatActivity() {
             }
             db?.noviUlov5Dao()?.getUlov5()
         }.doOnNext { list ->
-            var vrsta3 = ""
-            var kilaza3 = ""
-            var vrijeme3 = ""
-            var datum3 = ""
-            var mamci3 = ""
-            var mjesto3 = ""
-            list?.map { vrsta3 += it.vrsta5 + " - " }
-            list?.map { kilaza3 += it.kilaza5 + " - " }
-            list?.map { vrijeme3 += it.vrijeme5 + " - " }
-            list?.map { datum3 += it.datum5 + " - " }
-            list?.map { mamci3 += it.mamac5 + " - " }
-            list?.map { mjesto3 += it.mjesto5 + " - " }
-            textViewVrsta3.text = vrsta3
-            textViewKilaza3.text = kilaza3
-            textViewVrijeme3.text = vrijeme3
-            textViewDatum3.text = datum3
-            textViewMamac3.text = mamci3
-            textViewMjesto3.text = mjesto3
+            var vrsta5 = ""
+            var kilaza5 = ""
+            var vrijeme5 = ""
+            var datum5 = ""
+            var mamci5 = ""
+            var mjesto5 = ""
+            list?.map { vrsta5 += it.vrsta5 + " - " }
+            list?.map { kilaza5 += it.kilaza5 + " - " }
+            list?.map { vrijeme5 += it.vrijeme5 + " - " }
+            list?.map { datum5 += it.datum5 + " - " }
+            list?.map { mamci5 += it.mamac5 + " - " }
+            list?.map { mjesto5 += it.mjesto5 + " - " }
+            textViewVrsta5.text = vrsta5
+            textViewKilaza5.text = kilaza5
+            textViewVrijeme5.text = vrijeme5
+            textViewDatum5.text = datum5
+            textViewMamac5.text = mamci5
+            textViewMjesto5.text = mjesto5
         }.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe()

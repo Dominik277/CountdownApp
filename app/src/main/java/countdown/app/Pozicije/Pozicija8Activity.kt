@@ -10,12 +10,20 @@ import countdown.app.NoviUlov.NoviUlov8Activity
 import countdown.app.R
 import countdown.app.RoomDB.AppDatabase
 import countdown.app.RoomDB.NoviUlov3
+import countdown.app.RoomDB.NoviUlov8
+import countdown.app.RoomDB.NoviUlovDao8
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_pozicija3.*
+import kotlinx.android.synthetic.main.activity_pozicija3.textViewVrsta3
+import kotlinx.android.synthetic.main.activity_pozicija8.*
 
 class Pozicija8Activity : AppCompatActivity() {
+
+    private var db: AppDatabase? = null
+    private var noviUlov8Dao: NoviUlovDao8? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pozicija8)
@@ -24,33 +32,33 @@ class Pozicija8Activity : AppCompatActivity() {
 
         Observable.fromCallable {
             db = AppDatabase.getAppDataBase(context = this)
-            noviUlov3Dao = db?.noviUlov3Dao()
+            noviUlov8Dao = db?.noviUlov8Dao()
 
-            var noviUlov3_1 = NoviUlov3(1, "Šaran", "9,43 kg", "18:32", "21.06.2021", "Boila", "U prolazu")
+            var noviUlov8_1 = NoviUlov8(1, "Šaran", "9,43 kg", "18:32", "21.06.2021", "Boila", "U prolazu")
 
-            with(noviUlov3Dao) {
-                this?.insertNoviUlov3(noviUlov3_1)
+            with(noviUlov8Dao) {
+                this?.insertNoviUlov8(noviUlov8_1)
             }
-            db?.noviUlov3Dao()?.getUlov3()
+            db?.noviUlov8Dao()?.getUlov8()
         }.doOnNext { list ->
-            var vrsta3 = ""
-            var kilaza3 = ""
-            var vrijeme3 = ""
-            var datum3 = ""
-            var mamci3 = ""
-            var mjesto3 = ""
-            list?.map { vrsta3 += it.vrsta3 + " - " }
-            list?.map { kilaza3 += it.kilaza3 + " - " }
-            list?.map { vrijeme3 += it.vrijeme3 + " - " }
-            list?.map { datum3 += it.datum3 + " - " }
-            list?.map { mamci3 += it.mamac3 + " - " }
-            list?.map { mjesto3 += it.mjesto3 + " - " }
-            textViewVrsta3.text = vrsta3
-            textViewKilaza3.text = kilaza3
-            textViewVrijeme3.text = vrijeme3
-            textViewDatum3.text = datum3
-            textViewMamac3.text = mamci3
-            textViewMjesto3.text = mjesto3
+            var vrsta8 = ""
+            var kilaza8 = ""
+            var vrijeme8 = ""
+            var datum8 = ""
+            var mamci8 = ""
+            var mjesto8 = ""
+            list?.map { vrsta8 += it.vrsta8 + " - " }
+            list?.map { kilaza8 += it.kilaza8 + " - " }
+            list?.map { vrijeme8 += it.vrijeme8 + " - " }
+            list?.map { datum8 += it.datum8 + " - " }
+            list?.map { mamci8 += it.mamac8 + " - " }
+            list?.map { mjesto8 += it.mjesto8 + " - " }
+            textViewVrsta8.text = vrsta8
+            textViewKilaza8.text = kilaza8
+            textViewVrijeme8.text = vrijeme8
+            textViewDatum8.text = datum8
+            textViewMamac8.text = mamci8
+            textViewMjesto8.text = mjesto8
         }.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe()
