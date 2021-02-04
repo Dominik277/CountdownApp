@@ -15,9 +15,9 @@ interface NoviUlovDao5 {
     fun deleteNoviUlov3(noviUlov3: NoviUlov3)
 
     @Query("SELECT * FROM novi_ulov3 WHERE vrsta3 == :name")
-    fun getUlov3ByVrsta(name: String) : List
+    fun getUlov3ByVrsta(name: String) : List<NoviUlov5>
 
     @Query("SELECT * FROM novi_ulov3")
-    fun getUlov3(): List
+    fun getUlov3(): List<NoviUlov5>
 
 }
