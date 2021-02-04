@@ -17,7 +17,10 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun noviUlovDao() : NoviUlovDao
+    abstract fun noviUlov3Dao() : NoviUlovDao3
+    abstract fun noviUlov5Dao() : NoviUlovDao5
+    abstract fun noviUlov8Dao() : NoviUlovDao8
+    abstract fun noviUlov9Dao() : NoviUlovDao9
 
     companion object {
         @Volatile
