@@ -20,7 +20,7 @@ class NoviUlov3Activity : AppCompatActivity() {
         val datumUlov3: String = datum_ulov3.text.toString()
         val mamacUlov3: String = mamac_ulov3.text.toString()
         val mjestoUlov3: String = mjesto_ulov3.text.toString()
-        val gumbUnesi: Button = unesi_ulov3.findViewById(R.id.unesi_ulov3)
+        val gumbUnes5: Button = unesi_ulov3.findViewById(R.id.unesi_ulov3)
 
 
 
