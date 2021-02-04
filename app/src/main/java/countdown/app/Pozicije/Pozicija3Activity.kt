@@ -17,6 +17,8 @@ class Pozicija3Activity : AppCompatActivity() {
         setTitle("Pozicija 3")
     }
 
+
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.menu_pozicija3,menu)
