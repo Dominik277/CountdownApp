@@ -6,18 +6,18 @@ import androidx.room.*
 interface NoviUlovDao5 {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertNoviUlov3(noviUlov3: NoviUlov3)
+    fun insertNoviUlov5(noviUlov5: NoviUlov5)
 
     @Update
-    fun updateNoviUlov3(noviUlov3: NoviUlov3)
+    fun updateNoviUlov5(noviUlov5: NoviUlov5)
 
     @Delete
-    fun deleteNoviUlov3(noviUlov3: NoviUlov3)
+    fun deleteNoviUlov5(noviUlov5: NoviUlov5)
 
-    @Query("SELECT * FROM novi_ulov3 WHERE vrsta3 == :name")
-    fun getUlov3ByVrsta(name: String) : List<NoviUlov5>
+    @Query("SELECT * FROM novi_ulov5 WHERE vrsta5 == :name")
+    fun getUlov5ByVrsta(name: String) : List<NoviUlov5>
 
-    @Query("SELECT * FROM novi_ulov3")
-    fun getUlov3(): List<NoviUlov5>
+    @Query("SELECT * FROM novi_ulov5")
+    fun getUlov5(): List<NoviUlov5>
 
 }
