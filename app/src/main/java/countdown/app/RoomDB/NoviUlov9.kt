@@ -1,8 +1,10 @@
 package countdown.app.RoomDB
 
 import androidx.room.ColumnInfo
+import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+@Entity(tableName = "novi_ulov9")
 data class NoviUlov9(
         @PrimaryKey(autoGenerate = true) val id: Int,
         @ColumnInfo(name = "vrsta9") val vrsta9: String?,
