@@ -21,6 +21,7 @@ class MyAdapter(private val friends: List<DataModel>) : RecyclerView.Adapter<MyA
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val friend = friends[position]
         holder.view.textView.text = "${friend.firstName} ${friend.lastName} ${friend.email}"
+        holder.view.image.setImageDrawable(holder.view.context.getDrawable(friend.friendPhoto))
     }
 
     override fun getItemCount() = friends.size

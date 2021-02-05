@@ -15,13 +15,13 @@ class BasicActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
 
         val friends = listOf(
-                DataModel("Dominik","Doric","ddoric@gmial.com"),
-                DataModel("Pero","Peric","pperic@gmial.com"),
-                DataModel("Ivo","Ivić","iv@gmial.com"),
-                DataModel("Marko","Maric","marko@gmial.com"),
-                DataModel("Luka","Lukic","luka@gmial.com"),
-                DataModel("Tomo","Tomic","tomo@gmial.com"),
-                DataModel("Matej","Matejic","matej@gmial.com")
+                DataModel("Dominik","Doric","ddoric@gmial.com",R.drawable.person3),
+                DataModel("Pero","Peric","pperic@gmial.com",R.drawable.person1),
+                DataModel("Ivo","Ivić","iv@gmial.com",R.drawable.person3),
+                DataModel("Marko","Maric","marko@gmial.com",R.drawable.person1),
+                DataModel("Luka","Lukic","luka@gmial.com",R.drawable.person1),
+                DataModel("Tomo","Tomic","tomo@gmial.com",R.drawable.person3),
+                DataModel("Matej","Matejic","matej@gmial.com",R.drawable.person3)
         )
 
         recyclerView.apply {
