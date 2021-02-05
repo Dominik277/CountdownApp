@@ -3,7 +3,9 @@ package countdown.app
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log.d
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +22,9 @@ class MainActivity : AppCompatActivity() {
                 .build()
         database.friendDao().insertFriends(Friend(firstName = "Dominik",rating = 1000))
         val allFriends = database.friendDao().getAllFriends()
-        d("Dominik","allFriends size? ${allFriends.size}")
+        recyclerView.apply {
+            layoutManager = LinearLayoutManager(this@MainActivity)
+            adapter = FriendsAdapter(allFriends)
+        }
     }
 }
