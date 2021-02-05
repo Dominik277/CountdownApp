@@ -9,10 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CountdownApp">
-        <activity android:name=".FriendDetailView"></activity>
         <activity
-            android:name=".BasicActivity"
-            android:theme="@style/Theme.CountdownApp.NoActionBar">
+            android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
