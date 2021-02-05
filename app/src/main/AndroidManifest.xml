@@ -10,10 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CountdownApp">
         <activity
-            android:name=".BasicActivity"
-            android:label="@string/title_activity_basic"
-            android:theme="@style/Theme.CountdownApp.NoActionBar"></activity>
-        <activity
             android:name=".NoviUlov.NoviUlov9Activity"
             android:parentActivityName=".Pozicije.Pozicija9Activity" />
         <activity
@@ -37,7 +33,9 @@
         <activity
             android:name=".Pozicije.Pozicija3Activity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".BasicActivity"
+            android:theme="@style/Theme.CountdownApp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
