@@ -10,17 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CountdownApp">
         <activity
+            android:name=".BasicActivity"
+            android:label="@string/title_activity_basic"
+            android:theme="@style/Theme.CountdownApp.NoActionBar"></activity>
+        <activity
             android:name=".NoviUlov.NoviUlov9Activity"
-            android:parentActivityName=".Pozicije.Pozicija9Activity"/>
+            android:parentActivityName=".Pozicije.Pozicija9Activity" />
         <activity
             android:name=".NoviUlov.NoviUlov8Activity"
-            android:parentActivityName=".Pozicije.Pozicija8Activity"/>
+            android:parentActivityName=".Pozicije.Pozicija8Activity" />
         <activity
             android:name=".NoviUlov.NoviUlov5Activity"
-            android:parentActivityName=".Pozicije.Pozicija5Activity"/>
+            android:parentActivityName=".Pozicije.Pozicija5Activity" />
         <activity
             android:name=".NoviUlov.NoviUlov3Activity"
-            android:parentActivityName=".Pozicije.Pozicija3Activity"/>
+            android:parentActivityName=".Pozicije.Pozicija3Activity" />
         <activity
             android:name=".Pozicije.Pozicija9Activity"
             android:parentActivityName=".MainActivity" />
