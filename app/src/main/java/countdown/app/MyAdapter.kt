@@ -1,12 +1,14 @@
 package countdown.app
 
+import android.util.Log.d
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.my_row.view.*
 
-class MyAdapter(private val friends: List<DataModel>) : RecyclerView.Adapter<MyAdapter.ViewHolder>(){
+class MyAdapter(private val friends: List<DataModel>, private val friendClicked: () ->Unit) :
+        RecyclerView.Adapter<MyAdapter.ViewHolder>(){
 
 
     class ViewHolder (val view: View) : RecyclerView.ViewHolder(view)
@@ -22,6 +24,10 @@ class MyAdapter(private val friends: List<DataModel>) : RecyclerView.Adapter<MyA
         val friend = friends[position]
         holder.view.textView.text = "${friend.firstName} ${friend.lastName} ${friend.email}"
         holder.view.image.setImageDrawable(holder.view.context.getDrawable(friend.friendPhoto))
+        holder.view.setOnClickListener{
+            d("daniel","clicked")
+            friendClicked.invoke()
+        }
     }
 
     override fun getItemCount() = friends.size

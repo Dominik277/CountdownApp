@@ -1,6 +1,8 @@
 package countdown.app
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log.d
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -26,7 +28,10 @@ class BasicActivity : AppCompatActivity() {
 
         recyclerView.apply {
             layoutManager = LinearLayoutManager(this@BasicActivity)
-            adapter = MyAdapter(friends)
+            adapter = MyAdapter(friends){
+                d("danie","hi from main activity")
+                startActivity(Intent(this@BasicActivity,FriendDetailView::class.java))
+            }
         }
 
     }
