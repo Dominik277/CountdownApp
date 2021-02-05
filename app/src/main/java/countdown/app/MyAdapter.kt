@@ -4,8 +4,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.my_row.view.*
 
-class MyAdapter : RecyclerView.Adapter<MyAdapter.ViewHolder>(){
+class MyAdapter(private val friends: List<DataModel>) : RecyclerView.Adapter<MyAdapter.ViewHolder>(){
 
 
     class ViewHolder (val view: View) : RecyclerView.ViewHolder(view)
@@ -18,10 +19,11 @@ class MyAdapter : RecyclerView.Adapter<MyAdapter.ViewHolder>(){
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
+        val friend = friends[position]
+        holder.view.textView.text = "${friend.firstName} ${friend.lastName} ${friend.email}"
     }
 
-    override fun getItemCount() = 50
+    override fun getItemCount() = friends.size
 
 
 }

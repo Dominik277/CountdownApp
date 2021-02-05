@@ -14,9 +14,19 @@ class BasicActivity : AppCompatActivity() {
         setContentView(R.layout.activity_basic)
         setSupportActionBar(findViewById(R.id.toolbar))
 
+        val friends = listOf(
+                DataModel("Dominik","Doric","ddoric@gmial.com"),
+                DataModel("Pero","Peric","pperic@gmial.com"),
+                DataModel("Ivo","Ivić","iv@gmial.com"),
+                DataModel("Marko","Maric","marko@gmial.com"),
+                DataModel("Luka","Lukic","luka@gmial.com"),
+                DataModel("Tomo","Tomic","tomo@gmial.com"),
+                DataModel("Matej","Matejic","matej@gmial.com")
+        )
+
         recyclerView.apply {
             layoutManager = LinearLayoutManager(this@BasicActivity)
-            adapter = MyAdapter()
+            adapter = MyAdapter(friends)
         }
 
     }
