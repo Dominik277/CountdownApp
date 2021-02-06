@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="40dp"
     tools:context=".Fragments.List.Add.AddFragment">
 
 
@@ -37,7 +38,7 @@
         tools:layout_editor_absoluteX="92dp" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/addAge_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
