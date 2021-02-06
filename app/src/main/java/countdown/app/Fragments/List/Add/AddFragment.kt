@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import countdown.app.Data.User
 import countdown.app.Data.UserViewModel
 import countdown.app.R
@@ -41,6 +42,9 @@ class AddFragment : Fragment() {
             //Add data to database
             mUserViewModel.addUser(user)
             Toast.makeText(requireContext(),"Succesfully Added!",Toast.LENGTH_LONG).show()
+            findNavController().navigate(R.id.action_addFragment_to_listFragment)
+        }else{
+            Toast.makeText(requireContext(),"Please fill out all fields",Toast.LENGTH_LONG).show()
         }
     }
 
