@@ -9,7 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import countdown.app.Data.UserViewModel
+import countdown.app.ViewModel.UserViewModel
 import countdown.app.R
 import kotlinx.android.synthetic.main.fragment_list.view.*
 

@@ -1,4 +1,4 @@
-package countdown.app.Data
+package countdown.app.Model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

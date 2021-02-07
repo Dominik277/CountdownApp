@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import countdown.app.Data.User
+import countdown.app.Model.User
 import countdown.app.R
 import kotlinx.android.synthetic.main.custom_row.view.*
 

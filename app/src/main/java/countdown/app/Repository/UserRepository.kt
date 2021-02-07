@@ -1,6 +1,8 @@
-package countdown.app.Data
+package countdown.app.Repository
 
 import androidx.lifecycle.LiveData
+import countdown.app.Data.UserDao
+import countdown.app.Model.User
 
 class UserRepository(private val userDao: UserDao) {
 

@@ -10,8 +10,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import countdown.app.Data.User
-import countdown.app.Data.UserViewModel
+import countdown.app.Model.User
+import countdown.app.ViewModel.UserViewModel
 import countdown.app.R
 import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*

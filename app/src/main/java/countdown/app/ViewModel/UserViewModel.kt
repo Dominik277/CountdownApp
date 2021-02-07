@@ -1,9 +1,12 @@
-package countdown.app.Data
+package countdown.app.ViewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import countdown.app.Data.UserDatabase
+import countdown.app.Repository.UserRepository
+import countdown.app.Model.User
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
