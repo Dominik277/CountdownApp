@@ -1,4 +1,4 @@
-package countdown.app.Data
+package countdown.app.data
 
 import android.os.Parcelable
 import androidx.room.Entity

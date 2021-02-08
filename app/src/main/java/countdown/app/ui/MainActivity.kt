@@ -1,7 +1,8 @@
-package countdown.app
+package countdown.app.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import countdown.app.R
 
 class MainActivity : AppCompatActivity() {
 
