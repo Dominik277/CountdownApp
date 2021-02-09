@@ -34,6 +34,9 @@ class TasksFragment : Fragment(R.layout.fragment_tasks) {
         viewModel.tasks.observe(viewLifecycleOwner) {
             taskAdapter.submitList(it)
         }
+
+        setHasOptionsMenu(true)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -42,7 +45,7 @@ class TasksFragment : Fragment(R.layout.fragment_tasks) {
         val searchView = searchItem.actionView as SearchView
 
         searchView.onQueryTextChanged {
-            //update search query
+            viewModel.searchQuery.value = it
         }
     }
 
@@ -64,6 +67,7 @@ class TasksFragment : Fragment(R.layout.fragment_tasks) {
 
                 true
             }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }
