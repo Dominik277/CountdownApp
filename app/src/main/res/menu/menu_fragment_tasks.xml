@@ -18,7 +18,7 @@
                 android:title="Sort by name" />
             <item
                 android:id="@+id/action_sort_by_date_created"
-                android:title="Sort by date created"
+                android:title="Sort by date created"/>
         </menu>
 
     </item>
